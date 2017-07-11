@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+
+	
+	<!-- WEB前端中第2部分， CSS（样式：背景图片、宽度、高度、边框、颜色） -->
+
+	<style>
+
+	/* * 代表选择所有的元素，也就是说对所有元素都有作用*/
+	* {
+		/*外边距 都为 0*/
+		margin: 0;
+		/*内边距 都为 0*/
+		padding: 0;
+	}
+
+	/* 注释： . 代表定义样式
+		      c 代表样式的名字，可以修改的
+	*/
+	.c {
+		/* 宽度为 XX 像素 */
+		width: 100%;  
+
+		/* 高度为 XX 像素 */
+		/* vh 代表整个高度的1%，所以 100vh 就是整个页面的高度 */
+		height: 100vh;
+
+		/* 设置背景为 红色 */
+		/* background: red; */
+
+		/* 设置背景为 图片
+			url 代表 资源路径，规定的
+			img/bg.jpg 代表路径    不推荐类似 c:/ 这样的路径，因为其他电脑上不一定有C盘，所以容易出错
+				意思是： 当前文件 所在目录 下面的 img 目录 下面的 bg.jpg 这个文件
+		*/
+		background: url(img/bg.jpg);
+
+		/* 设置背景图片的宽度为100%，即与父节点元素的宽高一致*/
+		/* 设置背景图片的高度为100%，即与父节点元素的宽高一致*/
+		background-size: 100% 100%;
+	}
+
+	.firefly {
+		width: 50px;
+		height: 50px;
+		background: url(img/1.gif);
+		background-size: 100% 100%;
+
+		position: absolute; 
+
+		top: 300px;
+		left: 300px;
+	}
+
+	.a1 {
+		top: 500px;
+		left: 100px;
+	}
+	.a2 {
+		top: 300px;
+		left: 700px;
+	}
+	.a3 {
+		top: 200px;
+		left: 400px;
+	}
+
+	/* 定义样式 location 代表位置 */
+	.location {
+		/* 设置为绝对定位： 依据某个参考点，进行定位，默认的参考点是 浏览器页面的左上点 */
+		position: absolute; 
+		
+		/* 距离参考点 左边300像素 */
+		left: 300px;
+		/* 距离参考点 上边300像素 */
+		top: 300px;
+	}
+
+	</style>
+
+ </head>
+ <body>
+  
+
+ 
+	<!-- div 代表 一个大盒子，是 html 语言， WEB前端中第1部分 
+		class="c" 代表 将 样式 c 作用在当前元素上，样式中所有样式都会作用在这个元素上面
+	-->
+	<div class="c">
+	    <!-- 有2个样式，在2个样式之间加个空格，那么2个样式会同时作用在1个元素上 -->
+		<div class="firefly a1"> </div>
+		<div class="firefly a2"> </div>
+		<div class="firefly a3"> </div>
+	</div>
+
+
+  <script src="js/jquery-1.12.3.min.js"></script>
+
+  <script>
+	// 知道 如何 通过 js 来创建 萤火虫（div）
+	//  通过系统提供的功能来创建1个div
+	//  
+	for(var i = 1; i< 10;i++)
+	{
+	var a = document.createElement("div");
+
+	a.className = "firefly";
+
+	var x = Math.random() * 1300;
+
+	var y = Math.random() * 630;
+
+	a.style.top = y + "px";
+
+	a.style.left = x + "px";
+
+	$(".c").append(a);
+}
+  </script>
+
+
+ </body>
+</html>

@@ -1,0 +1,48 @@
+html,body{
+  width : 100%;
+  height : 100%;
+  margin : 0;
+  padding : 0;
+}
+
+.tianzi{
+  width : 499px;
+  height : 609px;
+  background: url(../images/tianzi.png);
+  position : absolute;
+  left : 400px;
+  z-index : 0;
+}
+
+.cloud{
+  /*left : -500px;*/
+  position : relative;
+  width : 1062px;
+  height : 463px;
+  background: url(../images/clouds4.png);
+  z-index : 2;
+  animation : clouds-moving 10s infinite;
+  -webkit-animation : clouds-moving 10s infinite;
+  -o-animation : clouds-moving 10s infinite;
+  -moz-animation : clouds-moving 10s infinite;
+}
+
+@keyframes clouds-moving{
+  from {left : -1000px;}
+  to {left : 1300px;}
+}
+
+@-moz-keyframes clouds-moving{
+  from {left : -1000px;}
+  to {left : 1300px;}  
+}
+
+@-webkit-keyframes clouds-moving{
+  from {left : -1000px;}
+  to {left : 1300px;}  
+}
+
+@-o-keyframes clouds-moving{
+  from {left : -1000px;}
+  to {left : 1300px;}  
+}

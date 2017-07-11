@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DOM测试</title>
+		<style>
+			.redText{
+				color : red;
+			}
+		</style>
+	</head>
+	<script src = "https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".extra").click(function(){
+				$("#redText").append("<p class = 'redText'>红红火火恍恍惚惚</p>");
+			})
+		});
+	</script>
+
+	<body>
+		<div id = "redText">
+			<p class = "redText">红红火火恍恍惚惚</p>
+		</div>
+		<div class = "extra">
+			<button>添加</button>
+		</div>
+	</body>
+
+</html>
